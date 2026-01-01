@@ -1,1 +1,143 @@
-{}
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "rules": {
+    // Base rules from neostandard (correctness & best practices)
+    // Note: Many correctness rules are enabled by default in oxlint
+
+    // Modernization: no-var as warn (from neostandard modernization)
+    "no-var": "warn",
+
+    // Pedantic rules that match neostandard base config
+    "accessor-pairs": "error",
+    "array-callback-return": "error",
+    "eqeqeq": "error",
+    "no-array-constructor": "error",
+    "no-case-declarations": "error",
+    "no-fallthrough": "error",
+    "no-new-wrappers": "error",
+    "no-object-constructor": "error",
+    "no-prototype-builtins": "error",
+    "no-redeclare": "error",
+    "no-self-compare": "error",
+    "no-throw-literal": "error",
+    "no-useless-return": "error",
+    "symbol-description": "error",
+
+    // Style rules (idiomatic patterns)
+    "curly": "error",
+    "default-case-last": "error",
+    "default-param-last": "error",
+    "new-cap": "error",
+    "no-lone-blocks": "error",
+    "no-multi-str": "error",
+    "no-new-func": "error",
+    "no-return-assign": "error",
+    "no-template-curly-in-string": "error",
+    "no-useless-computed-key": "error",
+    "prefer-promise-reject-errors": "error",
+    "yoda": "error",
+
+    // Correctness rules (most are enabled by default, listing explicit config)
+    "constructor-super": "error",
+    "no-async-promise-executor": "error",
+    "no-caller": "error",
+    "no-class-assign": "error",
+    "no-compare-neg-zero": "error",
+    "no-cond-assign": "error",
+    "no-const-assign": "error",
+    "no-constant-condition": "error",
+    "no-control-regex": "error",
+    "no-debugger": "error",
+    "no-delete-var": "error",
+    "no-dupe-class-members": "error",
+    "no-dupe-keys": "error",
+    "no-duplicate-case": "error",
+    "no-empty-character-class": "error",
+    "no-empty-pattern": "error",
+    "no-eval": "error",
+    "no-ex-assign": "error",
+    "no-extra-boolean-cast": "error",
+    "no-func-assign": "error",
+    "no-global-assign": "error",
+    "no-import-assign": "error",
+    "no-invalid-regexp": "error",
+    "no-irregular-whitespace": "error",
+    "no-loss-of-precision": "error",
+    "no-new-native-nonconstructor": "error",
+    "no-obj-calls": "error",
+    "no-self-assign": "error",
+    "no-shadow-restricted-names": "error",
+    "no-sparse-arrays": "error",
+    "no-this-before-super": "error",
+    "no-unsafe-finally": "error",
+    "no-unsafe-negation": "error",
+    "no-unused-expressions": "error",
+    "no-unused-vars": "error",
+    "no-useless-backreference": "error",
+    "no-useless-catch": "error",
+    "no-useless-escape": "error",
+    "no-useless-rename": "error",
+    "no-with": "error",
+    "use-isnan": "error",
+    "valid-typeof": "error",
+
+    // Suspicious rules
+    "no-extend-native": "error",
+    "no-extra-bind": "error",
+    "no-new": "error",
+    "no-unexpected-multiline": "error",
+    "no-unneeded-ternary": "error",
+    "no-useless-constructor": "error",
+
+    // Restriction rules (from neostandard)
+    "no-iterator": "error",
+    "no-labels": "error",
+    "no-proto": "error",
+    "no-regex-spaces": "error",
+    "no-sequences": "error",
+    "no-void": "error",
+    "unicode-bom": "error",
+
+    // Import plugin rules (import-x in neostandard -> import in oxlint)
+    "import/first": "error",
+    "import/no-duplicates": "error",
+    "import/no-named-default": "error",
+    "import/no-webpack-loader-syntax": "error",
+    "import/no-absolute-path": "error",
+
+    // Node plugin rules (n in neostandard -> node in oxlint)
+    // Note: n/no-deprecated-api is set to "warn" in modernization config
+    "node/no-new-require": "error",
+    "node/no-exports-assign": "error",
+
+    // Promise plugin rules
+    "promise/param-names": "error",
+
+    // React/JSX rules (from neostandard jsx config)
+    "react/jsx-key": "error",
+    "react/jsx-no-comment-textnodes": "error",
+    "react/jsx-no-duplicate-props": "error",
+    "react/jsx-no-undef": "error",
+    "react/no-children-prop": "error",
+    "react/no-danger-with-children": "error",
+    "react/no-direct-mutation-state": "error",
+    "react/no-find-dom-node": "error",
+    "react/no-is-mounted": "error",
+    "react/no-render-return-value": "error",
+    "react/no-string-refs": "error",
+    "react/self-closing-comp": "error",
+    "react/jsx-boolean-value": "error",
+    "react/jsx-fragments": "error",
+    "react/jsx-handler-names": "error",
+    "react/jsx-curly-brace-presence": "error"
+  },
+  "env": {
+    "es2022": true,
+    "node": true
+  },
+  "globals": {
+    "document": "readonly",
+    "navigator": "readonly",
+    "window": "readonly"
+  }
+}
