@@ -14,15 +14,15 @@ npm install --save-dev oxlint-config-standard oxlint
 
 ## Usage
 
-Extend this configuration in your `.oxlintrc.json`:
+Create a `.oxlintrc.json` in your project root:
 
 ```json
 {
-  "extends": ["oxlint-config-standard"]
+  "extends": ["./node_modules/oxlint-config-standard/.oxlintrc.json"]
 }
 ```
 
-Or copy the `.oxlintrc.json` file to your project root.
+> **Note**: Unlike ESLint, oxlint's `extends` field requires an explicit file path (only `.json` format is supported). You cannot use npm package names like `"oxlint-config-standard"` directly.
 
 ## What's Included
 
