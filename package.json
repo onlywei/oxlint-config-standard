@@ -2,7 +2,7 @@
   "name": "oxlint-config-standard",
   "version": "0.0.1",
   "description": "Shareable oxlint config based on standard / neostandard",
-  "keywords": [],
+  "keywords": ["oxlint", "config", "standard", "neostandard"],
   "license": "MIT",
   "author": "Wei Wang <wei@fastmail.com>",
   "files": [
