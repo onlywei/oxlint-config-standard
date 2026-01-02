@@ -3,13 +3,17 @@
   "version": "0.1.0",
   "description": "Shareable oxlint config based on standard / neostandard",
   "keywords": [
-    "oxlint",
     "config",
-    "standard",
-    "neostandard"
+    "neostandard",
+    "oxlint",
+    "standard"
   ],
   "license": "MIT",
   "author": "Wei Wang <wei@fastmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/onlywei/oxlint-config-standard.git"
+  },
   "files": [
     "./.oxlintrc.json"
   ],
