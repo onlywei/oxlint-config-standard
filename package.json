@@ -1,6 +1,6 @@
 {
   "name": "oxlint-config-standard",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Shareable oxlint config based on standard / neostandard",
   "keywords": [
     "oxlint",
