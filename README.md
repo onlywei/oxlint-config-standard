@@ -65,6 +65,14 @@ The configuration sets:
 
 This matches neostandard's default environment configuration.
 
+**Note**: Like neostandard, this configuration includes **both** Node.js and browser globals in a single config. This means:
+- Browser globals (`document`, `navigator`, `window`) are available even in Node.js code
+- Node.js rules are active even in browser code
+
+This is the same approach used by neostandard (which includes a `// TODO: Should only be active for server side scripts` comment). While not ideal for strictly typed environments, it works for most isomorphic JavaScript projects.
+
+Future versions may include separate configs for Node.js-only, browser-only, and isomorphic SSR code.
+
 ## Differences from neostandard
 
 1. **No formatting rules**: Use a separate formatter for code style

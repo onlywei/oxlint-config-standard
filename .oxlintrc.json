@@ -107,6 +107,7 @@
 
     // Node plugin rules (n in neostandard -> node in oxlint)
     // Note: n/no-deprecated-api is set to "warn" in modernization config
+    // TODO: These should only be active for server-side scripts (see neostandard base.js)
     "node/no-new-require": "error",
     "node/no-exports-assign": "error",
 
@@ -136,6 +137,8 @@
     "node": true
   },
   "globals": {
+    // Browser globals included for isomorphic code compatibility (matches neostandard)
+    // TODO: Consider separate configs for Node.js-only, browser-only, and isomorphic SSR
     "document": "readonly",
     "navigator": "readonly",
     "window": "readonly"
