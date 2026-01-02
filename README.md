@@ -49,13 +49,41 @@ Oxlint focuses on linting, not formatting. The following neostandard rules are *
 - Use [oxfmt](https://www.npmjs.com/package/oxfmt), [Prettier](https://prettier.io/), or [Biome](https://biomejs.dev/) for formatting
 
 ### Unsupported Rules
-Some neostandard rules don't have oxlint equivalents:
 
-- `camelcase` - Not available in oxlint
-- `object-shorthand` - Not available in oxlint
-- `dot-notation` - Available but turned off in neostandard modernization config
-- Various Node.js rules like `n/handle-callback-err`, `n/no-callback-literal`, etc.
-- Some advanced import-x rules
+Some neostandard rules don't have oxlint equivalents (~21 linting rules total):
+
+**Core ESLint Rules (13 rules):**
+- `camelcase` - Naming convention enforcement
+- `object-shorthand` - ES6 object literal shorthand
+- `dot-notation` - Available but turned OFF in neostandard modernization config
+- `no-dupe-args` - Duplicate function parameters (covered by parser)
+- `no-octal` - Octal literals
+- `no-octal-escape` - Octal escape sequences
+- `no-undef-init` - Initializing to undefined
+- `no-unmodified-loop-condition` - Loop conditions that never change
+- `no-unreachable-loop` - Unreachable loop detection
+- `no-use-before-define` - Variable hoisting issues
+- `one-var` - Variable declaration style
+- `prefer-const` - Const over let preference
+- `prefer-regex-literals` - Regex literal notation
+
+**Node.js Plugin Rules (5 rules):**
+- `n/handle-callback-err` - Callback error handling
+- `n/no-callback-literal` - Callback literal checks
+- `n/no-deprecated-api` - Deprecated Node.js APIs (set to 'warn' in modernization)
+- `n/no-path-concat` - Path concatenation with __dirname/__filename
+- `n/process-exit-as-throw` - Treat process.exit() as throw
+
+**React Plugin Rules (3 rules):**
+- `react/jsx-uses-react` - Not needed in React 17+ with new JSX transform
+- `react/jsx-uses-vars` - Variable usage tracking in JSX
+- `react/no-deprecated` - Deprecated React APIs
+
+**Import Plugin Rules:**
+- `import-x/export` - Export validation
+- Some other advanced import-x rules
+
+**Note:** The above count excludes 60+ `@stylistic/*` formatting rules which are intentionally not supported.
 
 ## Environment & Globals
 
@@ -82,7 +110,21 @@ Future versions may include separate configs for Node.js-only, browser-only, and
 
 ## Rule Count
 
-This configuration enables approximately **130 rules**, compared to neostandard's full ruleset. The focus is on correctness, best practices, and catching common errors.
+This configuration enables **132 rules** total.
+
+**Neostandard's linting rules (excluding formatting):**
+- 110 base rules (from `base.js`)
+- 21 React rules (from `jsx.js`)
+- **Total: 131 linting rules**
+
+**Our coverage:**
+- We implement **110 of neostandard's 131 linting rules** (84% coverage)
+- We're missing **21 unsupported rules** (listed above)
+- We have **132 total rules** because setting `"categories": { "correctness": "error" }` enables 22 additional correctness rules from oxlint that aren't explicitly in neostandard's config
+
+**Result:** This config is actually **stricter** than neostandard in some areas (more correctness rules), while missing some rules due to oxlint limitations.
+
+**Excluded from count:** Neostandard also has ~74 formatting rules (`@stylistic/*`) which are intentionally not included since oxlint focuses on linting, not formatting.
 
 ## Testing
 

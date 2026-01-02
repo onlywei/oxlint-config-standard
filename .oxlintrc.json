@@ -1,5 +1,6 @@
 {
   "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["import", "node", "react", "promise"],
   "categories": {
     "correctness": "error"
   },
@@ -120,6 +121,7 @@
     "react/jsx-key": "error",
     "react/jsx-no-comment-textnodes": "error",
     "react/jsx-no-duplicate-props": "error",
+    "react/jsx-no-target-blank": "error",
     "react/jsx-no-undef": "error",
     "react/no-children-prop": "error",
     "react/no-danger-with-children": "error",
@@ -128,6 +130,8 @@
     "react/no-is-mounted": "error",
     "react/no-render-return-value": "error",
     "react/no-string-refs": "error",
+    "react/no-unescaped-entities": "error",
+    "react/require-render-return": "error",
     "react/self-closing-comp": "error",
     "react/jsx-boolean-value": "error",
     "react/jsx-fragments": "error",
